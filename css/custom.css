@@ -1,0 +1,25 @@
+#left {
+  top: 75px;
+  left:-8.33%;
+  text-align: left;
+  float: left;
+  width:45%;
+  z-index:-10;
+}
+
+#right {
+  left:31.25%;
+  top: 75px;
+  float: right;
+  text-align: left;
+  z-index:-10;
+  width:45%;
+}
+
+body {
+    background-image: url(../img/fullstaq_small.png);
+    background-size: 4%;
+    background-repeat: no-repeat;
+    background-position: 0.5% 99%;
+}
+

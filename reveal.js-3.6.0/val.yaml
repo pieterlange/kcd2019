@@ -1,0 +1,4 @@
+image:
+  tag: v0.3.0
+ingressShim:
+  enabled: false

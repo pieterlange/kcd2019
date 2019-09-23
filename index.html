@@ -1,0 +1,313 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Use with reveal.js 3.6.0 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Kubernietes</title>
+
+    <link rel="stylesheet" href="reveal.js-3.6.0/css/reveal.css">
+    <link rel="stylesheet" href="reveal.js-3.6.0/css/theme/black.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="reveal.js-3.6.0/lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js-3.6.0/css/print/pdf.css' : 'reveal.js-3.6.0/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides" >
+        <section>
+          <section>
+            <h1>5 years of kubernetes and looking to the future</h1>
+            <p/>
+            <img src="img/k8s.png" style="border:none; background:none;width:25%;"/><br/>
+          </section>
+          <section>
+            <h3>whoami</h3>
+            <div id="left">
+              <ul>
+                <li>Pieter Lange</li>
+                <li>IT infrastructure technician</li>
+                <li>p.lange@fullstaq.com</li>
+                <li><a href="https://github.com/pieterlange/">github.com/pieterlange</a></li>
+                <li class="fragment" style="font-family: 'Lucida Console', Monaco, monospace;">eat, sleep, <img src="img/k8sparty.gif" style="border:none; background:none;width:10%;"/>, repeat</li>
+                <li class="fragment"><a href="https://twitter.com/kuberpieters/">@kuberpieters</a></li>
+              </ul>
+            </div>
+            <div id="right">
+              <img src="img/profile.jpg" style="border:none; background:none;width:60%;"/><br/>
+            </div>
+          </section>
+          <section>
+            <h1>Quick poll</h1>
+              <ul>
+                <li class="fragment">Who is using kubernetes? <div class="fragment">in production?</div></li>
+                <li class="fragment">Who was here last year?</li>
+              <ul>
+          </section>
+          <section>
+            <h3>My background</h3>
+            <ul>
+              <li>a fortunate upbringing</li>
+              <li class="fragment">DJO</li>
+              <li class="fragment">HULK</li>
+              <li class="fragment">HAL, CCC</li>
+            </ul>
+          </section>
+          <section>
+            <h1>Community</h1>
+          </section>
+
+          <section>
+            <a href="https://www.meetup.com/Kubernetes-Addicts-Support-Group/">kubernetes addicts support group</a><br/>
+            <img src="img/k8saddicts.jpg" style="border:none; background:none;width:65%;"/><br/>
+          </section>
+
+        </section>
+        <section>
+          <section>
+            <h1>Agenda</h1>
+            <img src="img/jarjar.png" style="border:none; background:none;width:20%;margin: auto;display: block;" class="fragment"/><br/>
+          </section>
+          <section>
+            <img src="img/thoughtleading1.png" style="border:none; background:none;width:70%;margin: auto;display: block;"/><br/>
+          </section>
+          <section>
+            <img src="img/thoughtleading2.png" style="border:none; background:none;width:70%;margin: auto;display: block;"/><br/>
+          </section>
+          <section>
+            <img src="img/thoughtleading3.png" style="border:none; background:none;width:70%;margin: auto;display: block;"/><br/>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>A brief history</h1>
+          </section>
+          <section>
+            <img src="img/mclean.jpg" style="border:none; background:none;width:40%;margin: auto;display: block;"/>
+            <div class="fragment">Malcolm McLean</div>
+          </section>
+          <section>
+            <img src="img/cargo.png" style="border:none; background:none;width:80%;margin: auto;display: block;"/>
+          </section>
+          <section>
+            <img src="img/intermodal-shipping-container.png" style="border:none; background:none;width:80%;margin: auto;display: block;"/>
+          </section>
+
+
+          <section>
+            <h1>Why kubernetes</h1>
+          </section>
+          <section>
+            <h5>Open</h5>
+            <ul>
+              <li>Open source</li>
+              <li>Open standards</li>
+              <li>Open security</li>
+              <li class="fragment" data-fragment-index="2">No vendor lock-in</li>
+            </ul>
+            <span style="float:right">
+              <img class="fragment" data-fragment-index="1" src="img/stallman.jpg" width="50%" style="border:none; background:none;"/>
+            </span>
+          </section>
+          <section>
+            <h5>Portable and flexible</h5>
+            <ul>
+              <li>Cloud provider agnostic</li>
+              <li>Strong primitives</li>
+              <li>Swappable components<span class="fragment"> (that includes me)</span></li>
+              <li>No vendor lock-in</li>
+            </ul>
+          </section>
+          <section>
+            <h5>Component health & maturity</h5>
+            <ul>
+              <li>Healthy project community</li>
+              <li>Production usage</li>
+              <li>Third parties</li>
+            </ul>
+          </section>
+          <section>
+            <ul>
+              <li class="fragment">Open &#10004;</li>
+              <li class="fragment">Portable and flexible &#10004;</li>
+              <li class="fragment">Healthy &#10004;</li>
+              <li class="fragment">Mature &#10004;</li>
+            </ul>
+          </section>
+          <section>
+            <h1>Docker randstad</h1>
+          </section>
+          <section data-background="img/podsarenotpets.jpg">
+          </section>
+        </section>
+
+        <section>
+					<section>
+						<h1>What happened</h1>
+					</section>
+          <section>
+            <img src="img/learnding.gif" style="border:none; background:none;width:30%;margin: auto;display: block;"/>
+          </section>
+          <section>
+            <h3>Make all the tools</h3>
+            <ul>
+              <li class="fragment">kube-aws</li>
+              <li class="fragment">kube-backup</li>
+              <li class="fragment">massive amounts of CI scripts</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Acquisitions</h3>
+            <ul>
+              <li class="fragment">CoreOS</li>
+              <li class="fragment">RedHat</li>
+              <li class="fragment">Heptio</li>
+              <li class="fragment">Bitnami</li>
+              <li class="fragment">not docker</li>
+            </ul>
+					</section>
+          <section>
+            <h3>Industry alignment</h3>
+            <ul>
+              <li class="fragment">we're all DevOps now</li>
+              <li class="fragment">Open Source is big money</li>
+              <li class="fragment">#kubernetes-users</li>
+            </ul>
+					</section>
+					<section>
+						<h2>We forgot the oldskool ops rules</h2>
+            <ul>
+              <li class="fragment">Apps run as root</li>
+              <li class="fragment">Everyone's an admin</li>
+              <li class="fragment">Separation of concerns</li>
+              <li class="fragment">lol chmod?</li>
+            </ul>
+					</section>
+        </section>
+				<section>
+					<section>
+						<h1>What's next</h1>
+					</section>
+					<section>
+						<h1>Service mesh</h1>
+            <div class="fragment">
+							<p><i>"A service mesh is not going to fix your service mess"</i></p>
+							<br/>@kuberpieters
+              <div class="fragment">#thoughtleading</div>
+            </div>
+					</section>
+
+					<section>
+						<h1>Operators</h1>
+            <img class="fragment" src="img/crossplane.png" style="border:none; background:none;width:30%;margin: auto;display: block;"/>
+					</section>
+
+					<section>
+						<h1>Observability</h1>
+            <img class="fragment" src="img/opentelemetry.png" style="border:none; background:none;width:70%;margin: auto;display: block;"/>
+					</section>
+
+					<section>
+						<h1>ClusterAPI</h1>
+            <br="fragment" style="font-family: 'Lucida Console', Monaco, monospace;">kubectl create cluster</br>
+          </section>
+          <section data-background="img/elephant.jpg">
+          </section>
+
+					<section>
+						<h1>Serverless!</h1>
+            <ul>
+              <li class="fragment">OpenFaas</li>
+              <li class="fragment">Knative</li>
+            </ul>
+					</section>
+
+					<section>
+						<h1>Security</h1>
+            <ul>
+              <li class="fragment">RBAC</li>
+              <li class="fragment">NetworkPolicies</li>
+              <li class="fragment">PodSecurityPolicies</li>
+            </ul>
+					</section>
+
+          <section tagcloud data-transition="fade-in">
+            kubectl
+            kube see tee el
+            kubecontrol<br/>
+            kube cuddle
+            kub-ektel
+            kubekuttel
+          </section>
+
+					<section>
+            <h3>Global warming</h3>
+            <img class="fragment" src="img/nerdalize.jpg" style="border:none; background:none;width:50%;margin: auto;display: block;"/>
+					</section>
+
+					<section>
+						<h3>We will continue to have legacy systems</h3>
+            <img class="fragment" src="img/legacy.jpeg" style="border:none; background:none;width:30%;margin: auto;display: block;"/>
+					</section>
+        </section>
+
+        <section>
+          <section data-transition="fade-out">
+            <h1>the community is you</h1>
+            <h3>please come share your experiences at our meetups!</h3>
+          </section>
+          <section data-transition="fade-out">
+            <h1>the community is you</h1>
+            <h3>please come share your experiences at our meetups!</h3>
+          </section>
+          <section data-transition="fade-out">
+            <h1>thank you</h1>
+            <br class="fragment"><a href="https://kubernietes.nl">kubernietes.nl</a></br>
+            <br/>
+            <img src="img/fullstaq.png" style="border:none; background:none;width:60%;"/><br/>
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="reveal.js-3.6.0/lib/js/head.min.js"></script>
+    <script src="reveal.js-3.6.0/js/reveal.js"></script>
+
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
+        width: "90%",
+        margin: 0.05,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: 'reveal.js-3.6.0/plugin/markdown/marked.js' },
+          { src: 'reveal.js-3.6.0/plugin/markdown/markdown.js' },
+          { src: 'reveal.js-3.6.0/plugin/notes/notes.js', async: true },
+          { src: 'reveal.js-3.6.0/plugin/tagcloud/tagcloud.js', async: true },
+          { src: 'reveal.js-3.6.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+      var resizeSlide = function() {
+        Reveal.configure({
+          width: window.innerWidth,
+          height: window.innerHeight
+        });
+      }
+
+    </script>
+  </body>
+</html>
